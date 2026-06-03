@@ -97,6 +97,32 @@ Configure your `.env` or settings file with your LangSmith keys, and every actio
 
 ---
 
+## 🗣️ Commands & Skill Triggers
+
+`skill-awesome` provides two ways to interact with the framework: **Native Slash Commands** (to invoke specific subagents) and **Natural Language Triggers** (to activate specific skills).
+
+### Native Slash Commands
+If you are using Claude Code or a compatible CLI, you can instantly switch the active agent profile using these commands:
+
+| Command | What it does | When to use it |
+|---------|--------------|----------------|
+| `/master-architect` | Invokes the Master Architect agent. | For backend, system design, architectural planning, and complex multi-agent orchestration. |
+| `/vibe-coder` | Invokes the Vibe Coder agent. | For frontend development, UI/UX implementation, and aesthetics-first coding. |
+| `/god-review` | Invokes the God Review pipeline. | Run this autonomously on a diff to review security, architecture, and UI slop before merging a PR. |
+
+### Natural Language Skill Triggers
+Agents are equipped with dozens of passive "Skills" that sit in the background. To activate them, simply include their trigger words in your prompt:
+
+| Skill | Trigger Phrase | What it does |
+|-------|----------------|--------------|
+| **Web Quality Audit** | *"run lighthouse audit"*, *"check page quality"*, *"audit my site"* | Executes a massive 150+ check audit against Core Web Vitals, SEO, and Accessibility standards. |
+| **Transitions.dev** | *"add a transition"*, *"make the modal open smoothly"*, *"stagger animation"* | Injects production-ready, zero-dependency CSS micro-animations into your frontend. |
+| **Clean SaaS UI** | *"build a clean UI"*, *"SaaS look"*, *"professional design"* | Enforces the `frontend-design-skill` rules to build structured, high-utility, glassmorphism-free interfaces. |
+| **Creative UI** | *"bold design"*, *"maximalist chaos"*, *"out of the box"* | Bypasses the SaaS rules and activates the `frontend-creative-design` skill for highly unique, experimental UI. |
+| **Memory Harness** | (Automatic) | Agents automatically run SQLite commands (`log_state`, `log_history`) in the background to track project memory. |
+
+---
+
 ## 🛠️ How to Use It
 
 Once installed, the framework runs natively in your agent workspace.
