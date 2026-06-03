@@ -1,143 +1,326 @@
 # Engineering Skills Repository
 
-A collection of production-ready engineering skills, review frameworks, development playbooks, testing methodologies, architecture guides, and operational workflows used to build, validate, and scale modern software systems.
+A collection of production-ready engineering skills, architecture standards, review frameworks, testing methodologies, deployment playbooks, and operational workflows used to design, build, review, secure, test, and deploy modern software systems.
 
-This repository serves as a centralized knowledge base for reusable engineering processes that can be applied across different projects, teams, and technology stacks.
-
----
-
-## Purpose
-
-As software systems grow, engineering quality becomes dependent on repeatable processes rather than individual contributors.
-
-This repository contains battle-tested skills and frameworks for:
-
-* Code Reviews
-* Architecture Reviews
-* Production Readiness Assessments
-* Testing Strategies
-* Reliability Engineering
-* Performance Analysis
-* Security Reviews
-* AI System Validation
-* Integration Validation
-* Incident Prevention
-* Development Workflows
-* Release Management
-
-The goal is to create reusable engineering assets that help teams ship software with greater confidence and consistency.
+This repository is designed to function as an **Engineering Operating System (EOS)** that provides structured guidance for engineering decisions throughout the entire software lifecycle.
 
 ---
 
-## What's Included
+# Purpose
 
-Examples of skills that may be included in this repository:
+As software systems scale, engineering quality becomes dependent on repeatable processes rather than individual contributors.
 
-### Engineering Reviews
+This repository contains reusable engineering skills that help teams:
 
-* Multi-Agent Code Review Framework
-* Production Readiness Review
-* Security Review Framework
-* Performance Review Framework
-* Scalability Assessment Framework
-* Architecture Review Process
+* Design better systems
+* Build maintainable software
+* Review code consistently
+* Prevent production issues
+* Improve security
+* Increase reliability
+* Standardize engineering practices
 
-### Development
-
-* Feature Development Playbooks
-* API Design Guidelines
-* Backend Development Standards
-* Frontend Development Standards
-* AI Product Development Frameworks
-
-### Quality Engineering
-
-* QA Review Frameworks
-* Test Strategy Templates
-* Regression Prevention Guides
-* Edge Case Discovery Processes
-
-### Reliability & Operations
-
-* Incident Readiness Reviews
-* Reliability Assessment Frameworks
-* Monitoring & Observability Checklists
-* Deployment Validation Guides
-
-### Product Engineering
-
-* MVP Evaluation Frameworks
-* Feature Validation Processes
-* Technical Debt Assessment Models
+The goal is to create a reusable engineering framework that can be applied to any project regardless of technology stack.
 
 ---
 
-## Philosophy
+# Engineering Lifecycle
 
-Every skill in this repository follows a few core principles:
-
-### Evidence Over Assumptions
-
-Recommendations should be supported by facts, reproducible behavior, or measurable risk.
-
-### Practical Over Theoretical
-
-Focus on realistic issues that can affect users, operations, scalability, security, or maintainability.
-
-### Reusable Over Project-Specific
-
-Skills should be adaptable to different projects, technologies, and engineering teams.
-
-### Validation Over Opinion
-
-Findings should be verified whenever possible before they become action items.
-
----
-
-## Repository Structure
+This repository covers the entire engineering lifecycle.
 
 ```text
-skills/
-├── code-review/
-├── architecture-review/
-├── security/
-├── performance/
-├── reliability/
-├── testing/
-├── ai-systems/
-├── integrations/
-├── deployment/
-└── operations/
-
-templates/
-checklists/
-playbooks/
-examples/
+Idea
+ ↓
+Architecture
+ ↓
+Backend Development
+ ↓
+Frontend Development
+ ↓
+API Design
+ ↓
+Database Design
+ ↓
+Security Review
+ ↓
+Testing
+ ↓
+Code Review
+ ↓
+Deployment
+ ↓
+Production Readiness
+ ↓
+Monitoring
 ```
 
-The structure may evolve as new skills and frameworks are added.
+Every stage has one or more supporting skills.
 
 ---
 
-## Who Is This For?
+# How To Use This Repository
 
-This repository can be useful for:
+## Step 1 – Start With The Master Skill
 
-* Software Engineers
-* Tech Leads
-* Engineering Managers
-* Founders
-* QA Engineers
-* DevOps Engineers
-* Security Engineers
-* Reliability Engineers
-* Product Engineering Teams
+Every task begins with:
+
+```text
+master-skill.md
+```
+
+The Master Skill acts as the orchestrator.
+
+Responsibilities:
+
+* Analyze user intent
+* Select required skills
+* Coordinate execution
+* Resolve conflicts
+* Generate final recommendations
 
 ---
 
-## Technology Agnostic
+## Step 2 – Load Engineering Principles
 
-The frameworks in this repository are intended to work across a wide range of technologies:
+Every task must load:
+
+```text
+engineering-principles.md
+```
+
+This document acts as the governing authority for all engineering decisions.
+
+Principles include:
+
+* Simplicity First
+* Reuse Before Build
+* Security By Default
+* Reliability By Default
+* Observability By Default
+* Backward Compatibility
+
+All other skills inherit these principles.
+
+---
+
+## Step 3 – Select Required Skills
+
+The Master Skill determines which skills are required.
+
+### Backend Development
+
+Load:
+
+```text
+backend-achitecture skill.md
+
+api-design-and-integrations.md
+
+database-design-and-data-architecture.md
+
+security-architecture.md
+
+testing-and-quality-engineering.md
+```
+
+---
+
+### Frontend Development
+
+Load:
+
+```text
+Frontend arch skill.md
+
+api-design-and-integrations.md
+
+testing-and-quality-engineering.md
+```
+
+---
+
+### Full Stack Features
+
+Load:
+
+```text
+backend-achitecture skill.md
+
+Frontend arch skill.md
+
+api-design-and-integrations.md
+
+database-design-and-data-architecture.md
+
+security-architecture.md
+
+testing-and-quality-engineering.md
+```
+
+---
+
+### Architecture Design
+
+Load:
+
+```text
+system-design-and-architecture-review.md
+
+database-design-and-data-architecture.md
+
+security-architecture.md
+```
+
+---
+
+### Deployment
+
+Load:
+
+```text
+Deployment-skill.md
+
+production-readiness-review.md
+
+security-architecture.md
+```
+
+---
+
+### Code Review
+
+Load:
+
+```text
+Universal Enterprise Multi-Agent Code Review & Production Readiness Skill.md
+```
+
+---
+
+### AI Products
+
+Load:
+
+```text
+ai-engineering-and-llm-systems.md
+
+security-architecture.md
+
+testing-and-quality-engineering.md
+```
+
+---
+
+# Skill Execution Framework
+
+Every task follows:
+
+```text
+User Request
+      ↓
+master-skill.md
+      ↓
+engineering-principles.md
+      ↓
+Required Skills
+      ↓
+Cross Skill Validation
+      ↓
+Agent Review
+      ↓
+Review Board
+      ↓
+Final Output
+```
+
+No skill should execute independently.
+
+---
+
+# Multi-Agent Review Process
+
+Most skills utilize a multi-agent review process.
+
+Example:
+
+```text
+Architecture Agent
+      ↓
+Security Agent
+      ↓
+Reliability Agent
+      ↓
+Performance Agent
+      ↓
+QA Agent
+```
+
+Each agent evaluates the task from a different perspective.
+
+---
+
+# Final Review Board
+
+Critical decisions should pass through a final review board.
+
+Example Board:
+
+* Principal Architect
+* Security Engineer
+* Reliability Engineer
+* Engineering Manager
+
+Approval Requirements:
+
+```text
+Minimum 3 of 4 approvals
+```
+
+---
+
+# Repository Structure
+
+```text
+README.md
+
+master-skill.md
+
+skill-execution-framework.md
+
+engineering-principles.md
+
+backend-achitecture skill.md
+
+Frontend arch skill.md
+
+api-design-and-integrations.md
+
+database-design-and-data-architecture.md
+
+security-architecture.md
+
+testing-and-quality-engineering.md
+
+system-design-and-architecture-review.md
+
+Deployment-skill.md
+
+Universal Enterprise Multi-Agent Code Review & Production Readiness Skill.md
+
+production-readiness-review.md
+
+ai-engineering-and-llm-systems.md
+```
+
+---
+
+# Supported Technologies
+
+The repository is technology agnostic.
+
+Supported ecosystems include:
+
+### Backend
 
 * Java
 * Spring Boot
@@ -145,65 +328,118 @@ The frameworks in this repository are intended to work across a wide range of te
 * Python
 * Go
 * .NET
+* Rust
+
+### Frontend
+
 * React
 * Next.js
 * Angular
-* Mobile Applications
-* SaaS Platforms
-* APIs
-* Microservices
-* AI Systems
-* Enterprise Applications
+* Vue
+* Svelte
+
+### Infrastructure
+
+* AWS
+* Azure
+* GCP
+* Vercel
+* Render
+* Railway
+* Kubernetes
+
+### Databases
+
+* PostgreSQL
+* MySQL
+* SQL Server
+* MongoDB
+* DynamoDB
+
+### AI Systems
+
+* OpenAI
+* Anthropic
+* Gemini
+* LangChain
+* Agent Frameworks
+* RAG Systems
 
 ---
 
-## About Zero Assist
+# About Zero Assist
 
-Some of the frameworks and methodologies contained in this repository were developed, refined, and validated while building **Zero Assist**.
+Many of these skills were developed, refined, and validated while building Zero Assist.
 
-Zero Assist is an interview integrity and assessment platform focused on helping organizations maintain trust and fairness during technical and professional evaluations.
+Zero Assist is an interview integrity and assessment platform focused on helping organizations maintain trust, transparency, and fairness during hiring and technical evaluations. 
 
-As the platform evolved, a number of reusable engineering processes emerged around:
+As the platform evolved, reusable engineering practices emerged around:
 
-* Production Readiness Reviews
 * Multi-Agent Code Reviews
-* Reliability Assessments
-* Integration Validation
-* Security Reviews
+* Production Readiness Reviews
+* Security Validation
 * Scalability Analysis
+* Architecture Reviews
+* Reliability Assessments
 
-Rather than keeping those processes internal, they are being documented here as reusable engineering assets that may be valuable to other teams and projects.
+Rather than keeping those processes internal, they are documented here as reusable engineering assets that can benefit other engineering teams.
 
-The repository itself is vendor-neutral and is not limited to any specific product or company.
+The repository itself remains vendor-neutral and technology agnostic.
 
 ---
 
-## Contributing
+# Contributing
 
 Contributions are welcome.
 
-Potential contribution areas:
+Examples:
 
-* New engineering skills
-* Framework-specific review guides
-* Security review enhancements
+* New skills
+* Architecture guides
+* Security frameworks
+* Testing methodologies
 * Reliability playbooks
-* Performance analysis methodologies
 * AI engineering workflows
-* Documentation improvements
+* Review frameworks
 
 ---
 
-## Disclaimer
+# Philosophy
 
-The skills and frameworks contained in this repository are intended to assist engineering teams in making better technical decisions.
+Every skill follows four core principles:
 
-They do not replace professional judgment, security audits, compliance reviews, or formal engineering processes where required.
+### Evidence Over Assumptions
 
-Use them as tools to improve consistency, quality, and engineering effectiveness.
+Recommendations should be supported by facts.
+
+### Practical Over Theoretical
+
+Focus on realistic production issues.
+
+### Reusable Over Project Specific
+
+Skills should work across projects and technologies.
+
+### Validation Over Opinion
+
+Findings should be verified before becoming action items.
 
 ---
 
-Zero Assist - Vaibhav Devere
+# Disclaimer
 
-Feel free to use, modify, and adapt these skills for your own engineering workflows.
+These skills are intended to support engineering teams in making better technical decisions.
+
+They do not replace:
+
+* Security audits
+* Compliance reviews
+* Professional engineering judgment
+* Regulatory requirements
+
+Use them as frameworks to improve consistency, quality, and engineering effectiveness.
+
+---
+
+Zero Assist - Vaibhav devere
+Feel free to use, modify, extend, and adapt these skills for your own engineering workflows.
