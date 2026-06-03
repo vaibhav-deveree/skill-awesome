@@ -113,6 +113,30 @@ When breaking changes are required:
 
 ---
 
+## Version Control Standards
+
+Every agent and engineer must strictly adhere to the following Git workflow:
+
+### Branch Naming
+Branches must be prefixed with the type of work, followed by a short, descriptive name (kebab-case):
+- `feat/<task-name>`: New features
+- `feature/<task-name>`: Alternate for new features
+- `fix/<task-name>`: Bug fixes
+- `chore/<task-name>`: Routine tasks, dependencies, setup
+- `docs/<task-name>`: Documentation updates
+- `refactor/<task-name>`: Code restructuring
+
+### Commit Messages
+Commits must follow the Conventional Commits standard:
+`<type>(<optional scope>): <description>`
+
+Examples:
+- `feat(auth): implement JWT token rotation`
+- `fix(ui): resolve button alignment issue on mobile`
+- `chore: update database engine script`
+
+---
+
 # Engineering Review Agents
 
 1. Architect Agent
