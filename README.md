@@ -49,7 +49,7 @@ Copy and paste this exact prompt to your AI agent (like Gemini):
 ### Option 2: Claude CLI Installation (Marketplace)
 Because Claude Code uses a decentralized marketplace system, you must add this repository as a registry before installing the plugin:
 ```bash
-claude plugins marketplace add https://github.com/vaibhav-deveree/skill-awesome.git
+claude plugins marketplace add vaibhav-deveree/skill-awesome
 claude plugins install skill-awesome-plugin
 ```
 

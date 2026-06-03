@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skill-awesome",
+  "description": "Skill awesome plugin by vaibhav-deveree",
+  "owner": {
+    "name": "vaibhav-deveree",
+    "email": "vaibhavdevere@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "skill-awesome-plugin",
+      "description": "The Ultimate AI Engineering Framework and Vibe Coder",
+      "author": {
+        "name": "vaibhav-deveree"
+      },
+      "category": "development",
+      "source": "./",
+      "homepage": "https://github.com/vaibhav-deveree/skill-awesome"
+    }
+  ]
+}
