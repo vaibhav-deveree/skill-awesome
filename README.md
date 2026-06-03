@@ -1,266 +1,108 @@
-# Engineering Skills Repository
+# skill-awesome: The Ultimate AI Engineering Framework
 
-A collection of production-ready engineering skills, architecture standards, review frameworks, testing methodologies, deployment playbooks, and operational workflows used to design, build, review, secure, test, and deploy modern software systems.
-
-This repository is designed to function as an **Engineering Operating System (EOS)** that provides structured guidance for engineering decisions throughout the entire software lifecycle.
+`skill-awesome` is a collection of production-ready engineering skills, architecture standards, and autonomous AI subagents designed to turn any standard AI coding assistant (like Claude, Gemini, or ChatGPT) into a highly disciplined, zero-hallucination **Engineering Operating System (EOS)**.
 
 ---
 
-# Purpose
+## 🌟 What It Does
 
-As software systems scale, engineering quality becomes dependent on repeatable processes rather than individual contributors.
+This plugin isn't just a list of guidelines; it provides **active agent behaviors** and an ultra-fast **SQLite Memory Engine** to orchestrate massive codebases without blowing up your token limits.
 
-This repository contains reusable engineering skills that help teams:
+### 1. The Agents
+When you install this plugin, you get access to specialized agents:
+- **Master Architect**: A disciplined orchestrator that enforces mandatory implementation plans, centralizes architecture decisions, and delegates tasks to specialized subagents.
+- **Vibe Coder**: An intuitive, aesthetics-first frontend co-pilot. It handles all boilerplate autonomously and is hardcoded to prioritize modern UI/UX design (glassmorphism, micro-animations).
 
-* Design better systems
-* Build maintainable software
-* Review code consistently
-* Prevent production issues
-* Improve security
-* Increase reliability
-* Standardize engineering practices
+### 2. The SQLite Memory Harness (Zero Hallucination)
+- Rather than reading huge Markdown files that cause token limits to explode, agents inject an ultra-fast SQLite database engine (`db_engine.py`) into your project.
+- It perpetually tracks **User Intent**, **Current State**, **History**, and a granular **Changelog**.
+- Agents use raw SQL (`gh query "SELECT * FROM state"`) to fetch *only* the context they need, ensuring perfect memory forever.
 
-The goal is to create a reusable engineering framework that can be applied to any project regardless of technology stack.
+### 3. Brownfield Project Onboarding
+- Drop the agent into a 10-year-old codebase, and it won't break anything. 
+- It maps the existing directory structure and architecture to the SQLite database.
+- It proposes architectural and security upgrades in a dedicated `implementation_plan.md` *before* modifying your old code.
 
----
+### 4. Interactive UI Mockup Workflow (Phase Zero)
+- When generating a new website or feature, the **Vibe Coder** will pause and generate a standalone `mockup.html`.
+- This HTML file is a visual mood board presenting color palettes, button styles, and layout variations.
+- You click and choose your exact "vibe" before the heavy framework code (React/Vue/Next.js) is even written.
 
-# Engineering Lifecycle
-
-This repository covers the entire engineering lifecycle.
-
-```text
-Idea
- ↓
-Architecture
- ↓
-Backend Development
- ↓
-Frontend Development
- ↓
-API Design
- ↓
-Database Design
- ↓
-Security Review
- ↓
-Testing
- ↓
-Code Review
- ↓
-Deployment
- ↓
-Production Readiness
- ↓
-Monitoring
-```
-
-Every stage has one or more supporting skills.
+### 5. Context-Aware Git & PR Workflow
+- **Conventional Commits**: Agents strictly enforce standard Git branching (`feat/`, `fix/`) and Conventional Commits.
+- **Conversational Commits**: Agents won't spam PRs on every prompt. They explicitly ask you: *"Should I commit these changes?"*
+- **Autonomous God Review**: Once approved, the agent automatically creates a Pull Request via the GitHub CLI (`gh pr create`) and triggers a multi-agent "God Review" covering security, architecture, and performance on the diff.
 
 ---
 
-# How To Use This Repository (As a Plugin)
+## 🚀 How to Install
 
-This repository is structured as a **Gemini Plugin**. You can install and use it directly within your agentic environment.
+This repository is structured as a **Gemini/Claude Plugin**.
 
-## Installation
+### Option 1: The Easy Way (AI Prompt)
+Copy and paste this exact prompt to your AI agent:
+> *"Please install the `skill-awesome` plugin from `https://github.com/vaibhav-deveree/skill-awesome.git` into my agent environment so I can use the Master Architect and Vibe Coder agents."*
 
-There are three ways to install this plugin:
-
-### 1. The Easy Way (AI Prompt)
-Copy and paste this exact prompt to Gemini, Claude, or your local AI agent:
-> "Please install the `skill-awesome` plugin from `https://github.com/vaibhav-deveree/skill-awesome.git` into my agent environment so I can use the Master Architect agent and its skills."
-
-### 2. Global Installation (Manual)
+### Option 2: Global Installation (Manual)
 1. Clone this repository.
-2. Copy the entire folder into your global plugins directory (e.g., `C:\Users\<your_user>\.gemini\config\plugins\skill-awesome`).
+2. Copy the entire folder into your global plugins directory:
+   ```bash
+   C:\Users\<your_user>\.gemini\config\plugins\skill-awesome
+   ```
 
-### 3. Project-Local Installation
-If you want to use these skills only within a specific repository:
-1. Navigate to your project's root folder.
-2. Create a local plugins directory and clone this repo into it:
+### Option 3: Project-Local Installation
+1. Navigate to your specific project's root folder.
+2. Clone this repo into the local plugins directory:
    ```bash
    mkdir -p .gemini/plugins
    cd .gemini/plugins
    git clone https://github.com/vaibhav-deveree/skill-awesome.git
    ```
 
-## Usage
-
-Once installed, the plugin exposes a **Master Architect** agent and a collection of **Skills**.
-
-### The Master Architect Agent
-
-You can invoke the Master Architect subagent directly. It is pre-configured with the `master-skill` and `engineering-principles` to coordinate other skills.
-
-Example prompt to the system:
-> "Invoke the master-architect to review my new API design in `backend/`."
-
-### Direct Skill Usage
-
-Individual skills (like `backend-achitecture-skill`, `security-architecture`, etc.) are natively available to the agents. When you ask an agent to perform a task, it will automatically search the `skills/` directory and apply the relevant methodologies.
-
 ---
 
-### Database-Backed Memory Harness (Zero Hallucination)
+## 🛠️ How to Use It
 
-The plugin includes an ultra-fast, SQLite database-backed **Memory Harness** feature designed to maximize token efficiency, eliminate hallucinations, and ensure no context is ever lost.
+Once installed, the framework runs natively in your agent workspace.
 
-When you start a project, the Master Architect will inject a portable database engine (`db_engine.py`) into your `.memory/` directory and initialize an SQLite database (`memory.db`). This database tracks:
-- **User Intent**: Exactly what you want to do.
-- **Current State**: Tasks in progress, blocked, or upcoming.
-- **History**: Past decisions and completed tasks.
-- **Changelog**: Specific file changes and codebase modifications.
+**To start a massive architectural project:**
+> *"Invoke the master-architect to review my project and generate a new feature implementation plan."*
 
-#### Why a Database?
-Instead of consuming massive token limits by reading full project histories in Markdown, agents **run SQL queries** via the CLI wrapper (e.g., `python .memory/db_engine.py query "SELECT * FROM state WHERE status = 'TODO'"`). They fetch *only* the exact 2 or 3 rows they need at that exact moment.
+**To do aesthetics-first frontend development:**
+> *"Invoke the vibe-coder to build a modern dashboard for this project."*
 
-The Master Architect acts as a dispatcher: it queries the database, identifies pending work, and spins up specialized subagents. It instructs the subagents to query the database themselves, completely bypassing massive token usage!
-
-# Repository Structure
-
-```text
-plugin.json                 # Plugin configuration
-README.md                   # This documentation
-agents/
-  master-architect.json     # Orchestrator subagent definition
-skills/
-  master-skill/
-    SKILL.md
-  engineering-principles/
-    SKILL.md
-  backend-achitecture-skill/
-    SKILL.md
-  ...
+**To interact with the Memory Harness manually:**
+You can always view your project's memory by running the python CLI the agents use:
+```bash
+python .memory/db_engine.py query "SELECT * FROM state"
 ```
 
 ---
 
-# Supported Technologies
+## 🤝 How to Contribute
 
-The repository is technology agnostic.
+Contributions are highly encouraged! We want to build the most comprehensive library of AI engineering protocols.
 
-Supported ecosystems include:
+### Contribution Guidelines
+1. **Never merge directly to `main`**. The repository is protected by strict branch protection rules.
+2. **Branch Naming**: Use `feat/<name>`, `fix/<name>`, or `chore/<name>`.
+3. **Commit Messages**: Use Conventional Commits (`feat(core): add new memory table`).
+4. **Create a Pull Request**: Submit a PR.
+5. **The God Review**: Your PR must pass an automated "God Review" and receive at least 1 approving review from a maintainer before it can be merged.
 
-### Backend
-
-* Java
-* Spring Boot
-* Node.js
-* Python
-* Go
-* .NET
-* Rust
-
-### Frontend
-
-* React
-* Next.js
-* Angular
-* Vue
-* Svelte
-
-### Infrastructure
-
-* AWS
-* Azure
-* GCP
-* Vercel
-* Render
-* Railway
-* Kubernetes
-
-### Databases
-
-* PostgreSQL
-* MySQL
-* SQL Server
-* MongoDB
-* DynamoDB
-
-### AI Systems
-
-* OpenAI
-* Anthropic
-* Gemini
-* LangChain
-* Agent Frameworks
-* RAG Systems
+Examples of great contributions:
+* New specialized skills (e.g., `cloud-native-skill`, `ai-agent-testing-skill`).
+* Improvements to the SQLite Memory Harness.
+* New Agent Profiles.
 
 ---
 
-# About Zero Assist
+## 📜 Philosophy
 
-Many of these skills were developed, refined, and validated while building Zero Assist.
+Every skill in this repository follows four core principles:
+1. **Evidence Over Assumptions**: Code generation is based on the SQLite DB facts.
+2. **Practical Over Theoretical**: Focus on realistic production issues.
+3. **Reusable Over Project Specific**: The DB engine and skills work on ANY tech stack.
+4. **Validation Over Opinion**: Code must pass the God Review before merging.
 
-Zero Assist is an interview integrity and assessment platform focused on helping organizations maintain trust, transparency, and fairness during hiring and technical evaluations. 
-
-As the platform evolved, reusable engineering practices emerged around:
-
-* Multi-Agent Code Reviews
-* Production Readiness Reviews
-* Security Validation
-* Scalability Analysis
-* Architecture Reviews
-* Reliability Assessments
-
-Rather than keeping those processes internal, they are documented here as reusable engineering assets that can benefit other engineering teams.
-
-The repository itself remains vendor-neutral and technology agnostic.
-
----
-
-# Contributing
-
-Contributions are welcome.
-
-Examples:
-
-* New skills
-* Architecture guides
-* Security frameworks
-* Testing methodologies
-* Reliability playbooks
-* AI engineering workflows
-* Review frameworks
-
----
-
-# Philosophy
-
-Every skill follows four core principles:
-
-### Evidence Over Assumptions
-
-Recommendations should be supported by facts.
-
-### Practical Over Theoretical
-
-Focus on realistic production issues.
-
-### Reusable Over Project Specific
-
-Skills should work across projects and technologies.
-
-### Validation Over Opinion
-
-Findings should be verified before becoming action items.
-
----
-
-# Disclaimer
-
-These skills are intended to support engineering teams in making better technical decisions.
-
-They do not replace:
-
-* Security audits
-* Compliance reviews
-* Professional engineering judgment
-* Regulatory requirements
-
-Use them as frameworks to improve consistency, quality, and engineering effectiveness.
-
----
-
-Zero Assist - Vaibhav devere
-Feel free to use, modify, extend, and adapt these skills for your own engineering workflows.
+*Feel free to use, modify, extend, and adapt these skills for your own engineering workflows.*
