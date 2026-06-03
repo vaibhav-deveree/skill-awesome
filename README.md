@@ -64,9 +64,25 @@ This repository is structured as a **Gemini Plugin**. You can install and use it
 
 ## Installation
 
+There are three ways to install this plugin:
+
+### 1. The Easy Way (AI Prompt)
+Copy and paste this exact prompt to Gemini, Claude, or your local AI agent:
+> "Please install the `skill-awesome` plugin from `https://github.com/vaibhav-deveree/skill-awesome.git` into my agent environment so I can use the Master Architect agent and its skills."
+
+### 2. Global Installation (Manual)
 1. Clone this repository.
-2. Copy the entire repository folder into your plugins directory (e.g., `C:\Users\<your_user>\.gemini\config\plugins\skill-awesome`).
-3. The plugin will automatically be loaded the next time you start your environment.
+2. Copy the entire folder into your global plugins directory (e.g., `C:\Users\<your_user>\.gemini\config\plugins\skill-awesome`).
+
+### 3. Project-Local Installation
+If you want to use these skills only within a specific repository:
+1. Navigate to your project's root folder.
+2. Create a local plugins directory and clone this repo into it:
+   ```bash
+   mkdir -p .gemini/plugins
+   cd .gemini/plugins
+   git clone https://github.com/vaibhav-deveree/skill-awesome.git
+   ```
 
 ## Usage
 
