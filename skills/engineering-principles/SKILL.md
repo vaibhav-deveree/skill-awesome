@@ -150,7 +150,7 @@ Examples:
 - **Execution Footer**: At the very end of every final response, you MUST append a standard footer reminding the user to check their token usage. Format the footer EXACTLY like this:
   `---`
   `**⚡️ Execution Complete**`
-  `*Run \`/cost\` to view exact token usage and billing for this prompt.*`
+  `*Run \`/cost\` (Claude Code) or \`/gsd-session-report\` (Gemini) to view token usage and billing.*`
 
 ---
 
