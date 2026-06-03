@@ -137,11 +137,13 @@ Examples:
 
 ---
 
-### Autonomous Pull Request & Review Policy (The God Review)
-- **NEVER merge directly to `main`**. All changes must go through a Pull Request.
-- **Autonomous PR Creation**: Agents MUST automatically generate the Pull Request using the GitHub CLI (`gh pr create --title "..." --body "..."`). Do not wait for the user to create the PR manually.
-- **Autonomous God Review**: Immediately after the PR is created, the orchestrating agent MUST automatically invoke the specialized subagents to perform the exhaustive "God Review" (covering security, architecture, frontend, backend) on the PR diff. Do not pause or ask for permission to start the review.
-- **Merge**: Present the final, fully-reviewed PR to the user for final merge approval.
+### Context-Aware Commit & PR Policy
+- **NEVER merge directly to `main`**. All changes must ultimately go through a Pull Request, but do NOT aggressively create PRs for every small prompt.
+- **Context Awareness**: Understand the user's workflow. Are they iterating on a feature, or is the feature complete? Do not commit or push on every single conversational turn.
+- **Interactive Commits**: When you believe a logical unit of work is done, ASK the user: "Should I commit these changes or do you want to continue working?"
+- **Interactive PRs**: If the user tells you to commit, AFTER committing, ASK the user: "Should I create a Pull Request for this now?"
+- **Explicit User Commands**: If the user explicitly says "commit" in their prompt, perform the commit, and then ask "Should I push this and create a PR?"
+- **Autonomous God Review**: Once the user explicitly approves the creation of the PR, you MUST automatically invoke the "God Review" subagents on the PR diff. Present the final reviewed PR to the user for merging.
 
 ---
 
