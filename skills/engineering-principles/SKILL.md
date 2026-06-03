@@ -145,6 +145,7 @@ Examples:
 - **Explicit User Commands**: If the user explicitly says "commit" in their prompt, perform the commit, and then ask "Should I push this and create a PR?"
 - **Autonomous God Review**: Once the user explicitly approves the creation of the PR, you MUST automatically invoke the "God Review" subagents on the PR diff.
 - **DO NOT MERGE**: You are strictly forbidden from merging the Pull Request yourself. Your job ends at creating the PR and invoking the God Review. The user will manually merge the PR.
+- **Merged PR Protection**: Before pushing commits to an existing branch, you MUST check if the associated PR has already been merged (e.g., using `gh pr view`). DO NOT push commits to a branch whose PR is already merged. If the PR is merged, you MUST checkout `main`, pull the latest changes, and create a brand new branch before committing.
 
 ---
 
