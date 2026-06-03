@@ -101,17 +101,20 @@ Individual skills (like `backend-achitecture-skill`, `security-architecture`, et
 
 ---
 
-### Memory Harness (Zero Hallucination Tracking)
+### Database-Backed Memory Harness (Zero Hallucination)
 
-The plugin includes a **Memory Harness** feature designed to maximize token efficiency and eliminate hallucinations or forgotten context.
+The plugin includes an ultra-fast, SQLite database-backed **Memory Harness** feature designed to maximize token efficiency, eliminate hallucinations, and ensure no context is ever lost.
 
-When you start a project, the Master Architect will automatically initialize a `.memory/` directory containing:
-- `INDEX.md`: A highly compressed, caveman-style index file that acts as the single source of truth.
-- `USER_INTENT.md`: Tracks exactly what you want to do.
-- `CURRENT_STATE.md`: Tracks current and upcoming tasks.
-- `HISTORY.md` & `CHANGELOG.md`: Tracks past decisions and code changes.
+When you start a project, the Master Architect will inject a portable database engine (`db_engine.py`) into your `.memory/` directory and initialize an SQLite database (`memory.db`). This database tracks:
+- **User Intent**: Exactly what you want to do.
+- **Current State**: Tasks in progress, blocked, or upcoming.
+- **History**: Past decisions and completed tasks.
+- **Changelog**: Specific file changes and codebase modifications.
 
-Instead of consuming massive token limits by reading full project histories, agents **only read the `INDEX.md`**, which contains pointers (links) to the specific sub-pages. The Master Architect will then spawn specialized subagents (teams) and hand them *only* the specific memory pointers they need to complete their isolated tasks.
+#### Why a Database?
+Instead of consuming massive token limits by reading full project histories in Markdown, agents **run SQL queries** via the CLI wrapper (e.g., `python .memory/db_engine.py query "SELECT * FROM state WHERE status = 'TODO'"`). They fetch *only* the exact 2 or 3 rows they need at that exact moment.
+
+The Master Architect acts as a dispatcher: it queries the database, identifies pending work, and spins up specialized subagents. It instructs the subagents to query the database themselves, completely bypassing massive token usage!
 
 # Repository Structure
 

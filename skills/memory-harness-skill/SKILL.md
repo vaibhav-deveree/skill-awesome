@@ -1,47 +1,34 @@
 ---
 name: memory-harness-skill
-description: Implements a highly token-efficient, zero-hallucination memory harness system for tracking project state, context, and history across agent sessions.
+description: Implements a highly token-efficient, zero-hallucination SQLite database memory harness for tracking project state, context, and history across agent sessions.
 ---
 
-# Memory Harness
+# Database-Backed Memory Harness
 
-The Memory Harness is an extremely token-efficient state-tracking system designed to maintain zero hallucination and massive context retention across sessions. It avoids blowing up the token window by organizing memory as an indexed network of linked pages rather than one massive file.
+The Memory Harness is an extremely token-efficient, database-backed state-tracking system designed to maintain zero hallucination and massive context retention across sessions. By using a local SQLite database instead of reading massive Markdown files, agents consume minimal tokens to fetch exactly the context they need.
 
 ## Rule 1: Always Initialize the Harness
-When starting work in a new project, you MUST verify if the `.memory/` directory exists in the project root. If it does not, you must initialize it with the following structure:
-- `.memory/INDEX.md`
-- `.memory/USER_INTENT.md`
-- `.memory/CURRENT_STATE.md`
-- `.memory/HISTORY.md`
-- `.memory/CHANGELOG.md`
+When starting work in a new project, you MUST verify if the `.memory/memory.db` file exists. If it does not, you must initialize it using the provided DB Engine script:
+1. Ensure the `db_engine.py` script from this skill is placed inside the project's `.memory/` directory.
+2. Run `python .memory/db_engine.py init` to generate the database tables (`intent`, `state`, `history`, `changelog`).
 
-## Rule 2: Token-Efficient Compression (Caveman Style)
-To maximize token efficiency, **all files MUST use terse, compressed language.**
-- NO pleasantries. NO fluff.
-- Use raw data formats: `[STATUS] task_name`, `[TODO] task_name`.
-- Omit unnecessary filler words (e.g., instead of "The user wants us to build a login page", write `USER: Build login page`).
+## Rule 2: Token-Efficient Querying
+To maximize token efficiency, NEVER read the entire database. Use specific SQL queries via the wrapper script to fetch only the rows you need right now.
+Example:
+`python .memory/db_engine.py query "SELECT * FROM state WHERE status = 'IN_PROGRESS'"`
+`python .memory/db_engine.py query "SELECT * FROM intent ORDER BY timestamp DESC LIMIT 3"`
 
-## Rule 3: The Index File (`INDEX.md`)
-The `INDEX.md` is the only file agents read initially. It MUST contain only ultra-compressed state summaries and markdown links to the other files.
-Example `INDEX.md`:
-```markdown
-# STATE
-- [CURRENT] auth layer integration (See [CURRENT_STATE.md](file:///.memory/CURRENT_STATE.md))
-- [NEXT] setup routing
-- [USER] wants fast, secure login (See [USER_INTENT.md](file:///.memory/USER_INTENT.md))
+## Rule 3: Updating State (Zero Hallucination)
+When you complete a task or make a decision, you MUST log it to the database immediately to ensure zero hallucination for future agents.
+Use the built-in CLI commands to log changes:
+- **Intent**: `python .memory/db_engine.py log_intent --category "feature" --content "User wants a login page"`
+- **State**: `python .memory/db_engine.py log_state --status "TODO" --task "Setup routing" --assigned_to "frontend-agent"`
+- **History**: `python .memory/db_engine.py log_history --task "Database schema" --outcome "Created user and posts tables"`
+- **Changelog**: `python .memory/db_engine.py log_changelog --file "src/App.js" --description "Added routing wrapper"`
 
-# HISTORY
-- [DONE] database schema (See [HISTORY.md](file:///.memory/HISTORY.md))
-- [LOG] schema changes (See [CHANGELOG.md](file:///.memory/CHANGELOG.md))
-```
+## Rule 4: Team-Based Workflows
+The orchestrator agent (Master Architect) acts as the dispatcher. It queries the database to determine the current `TODO` tasks, then spawns specialized subagents (e.g., frontend-agent, backend-agent). The Master Architect instructs the subagent to query the database themselves for context, entirely bypassing the Master Architect's own token limits.
 
-## Rule 4: Team-Based Reading (Subagent Delegation)
-The orchestrator agent (Master Architect) reads `INDEX.md`. If specialized work is required (e.g., backend logic), the Master Architect MUST spawn a specialized subagent (e.g., backend agent) and pass *only* the specific memory pointers (e.g., `file:///.memory/CURRENT_STATE.md`) to that subagent.
-This bypasses massive token usage by ensuring agents only read the exact memory page they need.
-
-## Rule 5: Zero Hallucination Updates
-When work is done:
-1. Update `CHANGELOG.md` with technical diffs.
-2. Move the task from `CURRENT_STATE.md` to `HISTORY.md`.
-3. Update `INDEX.md` to reflect the new state.
-Always verify previous memory before overwriting to ensure no context is lost.
+## Rule 5: Raw SQL Power
+If you need complex analysis across the project's history, you can execute raw SQL joins using the `query` command.
+Example: `python .memory/db_engine.py query "SELECT h.completed_task, c.file_changed FROM history h JOIN changelog c ON date(h.timestamp) = date(c.timestamp)"`
