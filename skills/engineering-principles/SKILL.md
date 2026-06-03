@@ -147,6 +147,10 @@ Examples:
 - **DO NOT MERGE**: You are strictly forbidden from merging the Pull Request yourself. Your job ends at creating the PR and invoking the God Review. The user will manually merge the PR.
 - **Merged PR Protection**: Before pushing commits to an existing branch, you MUST check if the associated PR has already been merged (e.g., using `gh pr view`). DO NOT push commits to a branch whose PR is already merged. If the PR is merged, you MUST checkout `main`, pull the latest changes, and create a brand new branch before committing.
 - **Cross-Platform Path Formatting**: When invoking MCP tools, running local scripts, or interacting with the file system on Windows, you MUST format all absolute paths using standard Windows drive letters (e.g., `C:\Users\...`). NEVER use POSIX/Git Bash style paths (e.g., `/c/Users/...`) because native Windows tools (like MCP servers and Node.js) will fail to resolve them properly.
+- **Execution Footer**: At the very end of every final response, you MUST append a standard footer reminding the user to check their token usage. Format the footer EXACTLY like this:
+  `---`
+  `**⚡️ Execution Complete**`
+  `*Run \`/cost\` to view exact token usage and billing for this prompt.*`
 
 ---
 
