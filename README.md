@@ -101,6 +101,18 @@ Individual skills (like `backend-achitecture-skill`, `security-architecture`, et
 
 ---
 
+### Memory Harness (Zero Hallucination Tracking)
+
+The plugin includes a **Memory Harness** feature designed to maximize token efficiency and eliminate hallucinations or forgotten context.
+
+When you start a project, the Master Architect will automatically initialize a `.memory/` directory containing:
+- `INDEX.md`: A highly compressed, caveman-style index file that acts as the single source of truth.
+- `USER_INTENT.md`: Tracks exactly what you want to do.
+- `CURRENT_STATE.md`: Tracks current and upcoming tasks.
+- `HISTORY.md` & `CHANGELOG.md`: Tracks past decisions and code changes.
+
+Instead of consuming massive token limits by reading full project histories, agents **only read the `INDEX.md`**, which contains pointers (links) to the specific sub-pages. The Master Architect will then spawn specialized subagents (teams) and hand them *only* the specific memory pointers they need to complete their isolated tasks.
+
 # Repository Structure
 
 ```text
