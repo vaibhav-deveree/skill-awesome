@@ -76,6 +76,21 @@ claude plugins install skill-awesome-plugin
 
 ---
 
+## 📊 Benchmarking & Observability (LangSmith)
+
+To benchmark how the agents perform (tracking token usage, execution time, and cost of every `/master-architect` command), you should integrate LangSmith alongside this framework. 
+
+Because `skill-awesome` acts as your prompt framework, it natively pairs with the official LangSmith tracing plugin.
+
+To install the telemetry tracer in Claude Code:
+```bash
+claude plugins marketplace add langchain-ai/langsmith-claude-code-plugins
+claude plugins install langsmith-tracing@langsmith-claude-code-plugins
+```
+Configure your `.env` or settings file with your LangSmith keys, and every action performed by the Vibe Coder or Master Architect will be fully visible and benchmarked in your dashboard!
+
+---
+
 ## 🛠️ How to Use It
 
 Once installed, the framework runs natively in your agent workspace.
