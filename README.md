@@ -39,9 +39,12 @@ When you install this plugin, you get access to specialized agents:
 
 This repository is structured as a **Gemini/Claude Plugin**.
 
-### Option 1: The Easy Way (AI Prompt)
-Copy and paste this exact prompt to your AI agent:
+### Option 1: The AI Prompt (For Native Gemini Agents)
+Copy and paste this exact prompt to your AI agent (like Gemini):
 > *"Please install the `skill-awesome` plugin from `https://github.com/vaibhav-deveree/skill-awesome.git` into my agent environment so I can use the Master Architect and Vibe Coder agents."*
+
+> [!WARNING]
+> **For Claude Code / Claude CLI Users**: Because this plugin is currently a private/direct repository and not published to a central marketplace, Claude's CLI will throw a `Not registered in the marketplace` error if it tries to run `claude plugins install github:...`. You MUST use Option 2 (Manual Global Installation) below.
 
 ### Option 2: Global Installation (Manual)
 1. Clone this repository.
