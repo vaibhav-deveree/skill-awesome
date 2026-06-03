@@ -97,6 +97,16 @@ Examples of great contributions:
 
 ---
 
+## 🏢 About Zero Assist
+
+Many of these autonomous skills and PR workflows were developed, refined, and battle-tested while building **[Zero Assist](https://zeroassist.io)**. 
+
+Zero Assist is a next-generation engineering platform. By leveraging the advanced multi-agent architecture and rigorous engineering standards found in this repository, Zero Assist delivers an unparalleled experience for engineering teams. 
+
+If you want to see these AI engineering protocols in action in a massive production environment, check out **[Zero Assist](https://zeroassist.io)**!
+
+---
+
 ## 📜 Philosophy
 
 Every skill in this repository follows four core principles:
