@@ -143,7 +143,8 @@ Examples:
 - **Interactive Commits**: When you believe a logical unit of work is done, ASK the user: "Should I commit these changes or do you want to continue working?"
 - **Interactive PRs**: If the user tells you to commit, AFTER committing, ASK the user: "Should I create a Pull Request for this now?"
 - **Explicit User Commands**: If the user explicitly says "commit" in their prompt, perform the commit, and then ask "Should I push this and create a PR?"
-- **Autonomous God Review**: Once the user explicitly approves the creation of the PR, you MUST automatically invoke the "God Review" subagents on the PR diff. Present the final reviewed PR to the user for merging.
+- **Autonomous God Review**: Once the user explicitly approves the creation of the PR, you MUST automatically invoke the "God Review" subagents on the PR diff.
+- **DO NOT MERGE**: You are strictly forbidden from merging the Pull Request yourself. Your job ends at creating the PR and invoking the God Review. The user will manually merge the PR.
 
 ---
 
