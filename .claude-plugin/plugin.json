@@ -3,8 +3,5 @@
   "description": "The Ultimate AI Engineering Framework and Vibe Coder",
   "author": {
     "name": "vaibhav-deveree"
-  },
-  "hooks": {
-    "SessionStart": "node ./.claude-plugin/hooks/inject_context.js"
   }
 }
