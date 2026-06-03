@@ -284,6 +284,28 @@ Every implementation must consider:
 
 ---
 
+## Rule 13
+
+Mandatory Implementation Plan: Whenever a user requests a new feature, you MUST create a comprehensive implementation plan that explicitly covers:
+- Backend Architecture
+- Frontend Architecture
+- System Architecture
+- Security Architecture
+
+---
+
+## Rule 14
+
+Centralized Plans Directory: You MUST create and store all implementation plans in a dedicated directory located at `.memory/plans/` to integrate with the memory harness.
+
+---
+
+## Rule 15
+
+Mandatory Task Tracking: You MUST create a `task.md` artifact when beginning execution. You must use this file to track all task progress and codebase changes systematically while implementing the task.
+
+---
+
 # Step 5 – Agent Assignment
 
 Deploy specialized agents based on request type.
