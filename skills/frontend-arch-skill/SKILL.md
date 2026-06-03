@@ -67,6 +67,21 @@ Build for user outcomes, not developer convenience.
 
 ---
 
+# Phase Zero: Interactive UI Mockup
+
+## Mandatory Pre-Implementation Mockup
+Whenever a user requests to build a new website from scratch or a major new feature, you MUST generate an interactive mockup BEFORE writing any framework code (React, Vue, etc.).
+
+1. **Create the Mockup**: Generate a standalone `mockup.html` file in the `.memory/mockups/` directory.
+2. **Mood Board Presentation**: The HTML file must visually present options based on the user's prompt:
+   - At least 2-3 color palette variations.
+   - Button style options (e.g., solid, outline, glassmorphism).
+   - Layout options (e.g., side panel vs top navigation).
+3. **Interactive Preview**: The `mockup.html` MUST include basic JavaScript to allow the user to click the palettes/styles and see the vibe change dynamically on the screen.
+4. **User Selection**: Present this mockup to the user and wait for them to select their preferred "vibe" before proceeding with actual component implementation.
+
+---
+
 # User Preferences
 
 ## Theme Preferences
