@@ -44,16 +44,23 @@ Copy and paste this exact prompt to your AI agent (like Gemini):
 > *"Please install the `skill-awesome` plugin from `https://github.com/vaibhav-deveree/skill-awesome.git` into my agent environment so I can use the Master Architect and Vibe Coder agents."*
 
 > [!WARNING]
-> **For Claude Code / Claude CLI Users**: Because this plugin is currently a private/direct repository and not published to a central marketplace, Claude's CLI will throw a `Not registered in the marketplace` error if it tries to run `claude plugins install github:...`. You MUST use Option 2 (Manual Global Installation) below.
+> **For Claude CLI Users**: Please see Option 2 below. You must add this repository as a custom marketplace first.
 
-### Option 2: Global Installation (Manual)
+### Option 2: Claude CLI Installation (Marketplace)
+Because Claude Code uses a decentralized marketplace system, you must add this repository as a registry before installing the plugin:
+```bash
+claude plugins marketplace add https://github.com/vaibhav-deveree/skill-awesome.git
+claude plugins install skill-awesome-plugin
+```
+
+### Option 3: Global Installation (Manual)
 1. Clone this repository.
 2. Copy the entire folder into your global plugins directory:
    ```bash
    C:\Users\<your_user>\.gemini\config\plugins\skill-awesome
    ```
 
-### Option 3: Project-Local Installation
+### Option 4: Project-Local Installation
 1. Navigate to your specific project's root folder.
 2. Clone this repo into the local plugins directory:
    ```bash
