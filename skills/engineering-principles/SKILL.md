@@ -137,6 +137,13 @@ Examples:
 
 ---
 
+### Pull Request & Review Policy (The God Review)
+- **NEVER merge directly to `main`**. All changes must go through a Pull Request.
+- **Proper PR Descriptions**: Every PR must include a comprehensive description of the problem, the solution, and the architectural impact.
+- **The God Review**: Once a PR is created, it MUST undergo a final, exhaustive "God Review" (a multi-agent comprehensive review of security, architecture, frontend, and backend code quality) before it can be merged into `main`.
+
+---
+
 # Engineering Review Agents
 
 1. Architect Agent
