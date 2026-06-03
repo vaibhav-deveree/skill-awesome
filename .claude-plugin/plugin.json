@@ -1,16 +1,7 @@
 {
   "name": "skill-awesome-plugin",
-  "version": "1.0.0",
-  "description": "A collection of production-ready engineering skills and a Master Architect agent.",
+  "description": "The Ultimate AI Engineering Framework and Vibe Coder",
   "author": {
-    "name": "Vaibhav devere"
-  },
-  "license": "MIT",
-  "keywords": [
-    "engineering",
-    "architecture",
-    "code-review",
-    "deployment",
-    "skills"
-  ]
+    "name": "vaibhav-deveree"
+  }
 }
