@@ -1,5 +1,10 @@
 # skill-awesome: The Ultimate AI Engineering Framework
 
+![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin_Ready-7b3f00?style=for-the-badge&logo=anthropic)
+![Multi-Agent](https://img.shields.io/badge/Multi--Agent-Architecture-007acc?style=for-the-badge)
+![Zero Assist](https://img.shields.io/badge/Powered_by-Zero_Assist-2ea44f?style=for-the-badge)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)
+
 `skill-awesome` is a collection of production-ready engineering skills, architecture standards, and autonomous AI subagents designed to turn any standard AI coding assistant (like Claude, Gemini, or ChatGPT) into a highly disciplined, zero-hallucination **Engineering Operating System (EOS)**.
 
 ---
