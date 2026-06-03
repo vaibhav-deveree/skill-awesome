@@ -54,6 +54,16 @@ def init_db():
         )
     ''')
     
+    # Architecture (Brownfield Map)
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS architecture (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            timestamp TEXT,
+            component TEXT,
+            structure TEXT
+        )
+    ''')
+    
     conn.commit()
     conn.close()
 
@@ -120,6 +130,11 @@ def main():
     parser_changelog.add_argument("--file", required=True, help="File changed")
     parser_changelog.add_argument("--description", required=True, help="What was changed")
     
+    # Log Architecture
+    parser_arch = subparsers.add_parser("log_architecture")
+    parser_arch.add_argument("--component", required=True, help="e.g., 'frontend', 'backend', 'database'")
+    parser_arch.add_argument("--structure", required=True, help="Description of the mapped structure")
+    
     # Query
     parser_query = subparsers.add_parser("query")
     parser_query.add_argument("sql", help="Raw SQL query")
@@ -137,6 +152,8 @@ def main():
         log_entry("history", {"completed_task": args.task, "outcome": args.outcome})
     elif args.command == "log_changelog":
         log_entry("changelog", {"file_changed": args.file, "description": args.description})
+    elif args.command == "log_architecture":
+        log_entry("architecture", {"component": args.component, "structure": args.structure})
     elif args.command == "query":
         run_query(args.sql)
     else:

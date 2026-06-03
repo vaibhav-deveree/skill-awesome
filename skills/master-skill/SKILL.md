@@ -306,6 +306,16 @@ Mandatory Task Tracking: You MUST create a `task.md` artifact when beginning exe
 
 ---
 
+## Rule 16
+
+Brownfield Initialization Protocol: When initialized in an already-existing project (the folder is not empty):
+1. **Analyze First, Do Not Break**: You MUST work alongside the existing project structure. DO NOT arbitrarily rename core folders or rewrite existing architecture without explicit instruction.
+2. **Architecture Mapping**: You MUST scan the existing directory structure, identify the architecture and technologies, and use `log_architecture` to save this understanding permanently into the SQLite database.
+3. **Propose Improvements**: Generate an `implementation_plan.md` outlining recommendations for structural, architectural, and security upgrades, but wait for user approval before modifying existing code.
+4. **Code Forward**: From then on, adhere to all standard engineering principles and Git workflows for any new code added.
+
+---
+
 # Step 5 – Agent Assignment
 
 Deploy specialized agents based on request type.

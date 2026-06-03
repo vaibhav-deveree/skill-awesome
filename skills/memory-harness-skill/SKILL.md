@@ -10,7 +10,7 @@ The Memory Harness is an extremely token-efficient, database-backed state-tracki
 ## Rule 1: Always Initialize the Harness
 When starting work in a new project, you MUST verify if the `.memory/memory.db` file exists. If it does not, you must initialize it using the provided DB Engine script:
 1. Ensure the `db_engine.py` script from this skill is placed inside the project's `.memory/` directory.
-2. Run `python .memory/db_engine.py init` to generate the database tables (`intent`, `state`, `history`, `changelog`).
+2. Run `python .memory/db_engine.py init` to generate the database tables (`intent`, `state`, `history`, `changelog`, `architecture`).
 
 ## Rule 2: Token-Efficient Querying
 To maximize token efficiency, NEVER read the entire database. Use specific SQL queries via the wrapper script to fetch only the rows you need right now.
@@ -24,6 +24,7 @@ Use the built-in CLI commands to log changes:
 - **Intent**: `python .memory/db_engine.py log_intent --category "feature" --content "User wants a login page"`
 - **State**: `python .memory/db_engine.py log_state --status "TODO" --task "Setup routing" --assigned_to "frontend-agent"`
 - **History**: `python .memory/db_engine.py log_history --task "Database schema" --outcome "Created user and posts tables"`
+- **Architecture (Brownfield)**: `python .memory/db_engine.py log_architecture --component "frontend" --structure "React SPA in /src"`
 - **Changelog**: `python .memory/db_engine.py log_changelog --file "src/App.js" --description "Added routing wrapper"`
 
 ## Rule 4: Team-Based Workflows
