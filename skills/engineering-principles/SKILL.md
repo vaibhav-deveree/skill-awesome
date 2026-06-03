@@ -137,10 +137,11 @@ Examples:
 
 ---
 
-### Pull Request & Review Policy (The God Review)
+### Autonomous Pull Request & Review Policy (The God Review)
 - **NEVER merge directly to `main`**. All changes must go through a Pull Request.
-- **Proper PR Descriptions**: Every PR must include a comprehensive description of the problem, the solution, and the architectural impact.
-- **The God Review**: Once a PR is created, it MUST undergo a final, exhaustive "God Review" (a multi-agent comprehensive review of security, architecture, frontend, and backend code quality) before it can be merged into `main`.
+- **Autonomous PR Creation**: Agents MUST automatically generate the Pull Request using the GitHub CLI (`gh pr create --title "..." --body "..."`). Do not wait for the user to create the PR manually.
+- **Autonomous God Review**: Immediately after the PR is created, the orchestrating agent MUST automatically invoke the specialized subagents to perform the exhaustive "God Review" (covering security, architecture, frontend, backend) on the PR diff. Do not pause or ask for permission to start the review.
+- **Merge**: Present the final, fully-reviewed PR to the user for final merge approval.
 
 ---
 
