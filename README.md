@@ -38,6 +38,12 @@ When you install this plugin, you get access to specialized agents:
 - **Conversational Commits**: Agents won't spam PRs on every prompt. They explicitly ask you: *"Should I commit these changes?"*
 - **Autonomous God Review**: Once approved, the agent automatically creates a Pull Request via the GitHub CLI (`gh pr create`) and triggers a multi-agent "God Review" covering security, architecture, and performance on the diff.
 
+### 6. Native Claude Code Integration
+- **Slash Commands**: Adds native `/master-architect`, `/vibe-coder`, and `/god-review` commands directly into your Claude Code terminal. No need to copy/paste long prompts.
+- **Global Context Injection**: Uses a `SessionStart` hook to invisibly inject the `engineering-principles` into Claude's memory the moment the terminal opens. Claude *always* knows your PR rules.
+- **Cross-Platform MCP Engine**: Built-in prompt constraints force the agent to format Windows paths correctly (`C:\`), permanently fixing the notorious Git Bash MCP crashing bug.
+- **Inline Token Telemetry**: Agents automatically append an `Execution Footer` to their responses, providing an inline mathematical estimation of input/output tokens used per transaction.
+
 ---
 
 ## 🚀 How to Install
@@ -95,11 +101,21 @@ Configure your `.env` or settings file with your LangSmith keys, and every actio
 
 Once installed, the framework runs natively in your agent workspace.
 
-**To start a massive architectural project:**
-> *"Invoke the master-architect to review my project and generate a new feature implementation plan."*
+**To invoke the Master Architect:**
+Use the native slash command to instantly switch personas:
+```bash
+/master-architect Review my project and generate a new feature implementation plan.
+```
 
 **To do aesthetics-first frontend development:**
-> *"Invoke the vibe-coder to build a modern dashboard for this project."*
+```bash
+/vibe-coder Build a modern dashboard for this project with glassmorphism.
+```
+
+**To trigger an autonomous God Review on a PR:**
+```bash
+/god-review
+```
 
 **To interact with the Memory Harness manually:**
 You can always view your project's memory by running the python CLI the agents use:
