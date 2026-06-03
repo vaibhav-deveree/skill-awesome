@@ -1,3 +1,8 @@
+---
+name: engineering-principles
+description: engineering principles
+---
+
 
 # Universal Engineering Principles & Governance Skill
 

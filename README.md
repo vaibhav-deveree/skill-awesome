@@ -58,258 +58,48 @@ Every stage has one or more supporting skills.
 
 ---
 
-# How To Use This Repository
+# How To Use This Repository (As a Plugin)
 
-## Step 1 – Start With The Master Skill
+This repository is structured as a **Gemini Plugin**. You can install and use it directly within your agentic environment.
 
-Every task begins with:
+## Installation
 
-```text
-master-skill.md
-```
+1. Clone this repository.
+2. Copy the entire repository folder into your plugins directory (e.g., `C:\Users\<your_user>\.gemini\config\plugins\skill-awesome`).
+3. The plugin will automatically be loaded the next time you start your environment.
 
-The Master Skill acts as the orchestrator.
+## Usage
 
-Responsibilities:
+Once installed, the plugin exposes a **Master Architect** agent and a collection of **Skills**.
 
-* Analyze user intent
-* Select required skills
-* Coordinate execution
-* Resolve conflicts
-* Generate final recommendations
+### The Master Architect Agent
 
----
+You can invoke the Master Architect subagent directly. It is pre-configured with the `master-skill` and `engineering-principles` to coordinate other skills.
 
-## Step 2 – Load Engineering Principles
+Example prompt to the system:
+> "Invoke the master-architect to review my new API design in `backend/`."
 
-Every task must load:
+### Direct Skill Usage
 
-```text
-engineering-principles.md
-```
-
-This document acts as the governing authority for all engineering decisions.
-
-Principles include:
-
-* Simplicity First
-* Reuse Before Build
-* Security By Default
-* Reliability By Default
-* Observability By Default
-* Backward Compatibility
-
-All other skills inherit these principles.
-
----
-
-## Step 3 – Select Required Skills
-
-The Master Skill determines which skills are required.
-
-### Backend Development
-
-Load:
-
-```text
-backend-achitecture skill.md
-
-api-design-and-integrations.md
-
-database-design-and-data-architecture.md
-
-security-architecture.md
-
-testing-and-quality-engineering.md
-```
-
----
-
-### Frontend Development
-
-Load:
-
-```text
-Frontend arch skill.md
-
-api-design-and-integrations.md
-
-testing-and-quality-engineering.md
-```
-
----
-
-### Full Stack Features
-
-Load:
-
-```text
-backend-achitecture skill.md
-
-Frontend arch skill.md
-
-api-design-and-integrations.md
-
-database-design-and-data-architecture.md
-
-security-architecture.md
-
-testing-and-quality-engineering.md
-```
-
----
-
-### Architecture Design
-
-Load:
-
-```text
-system-design-and-architecture-review.md
-
-database-design-and-data-architecture.md
-
-security-architecture.md
-```
-
----
-
-### Deployment
-
-Load:
-
-```text
-Deployment-skill.md
-
-production-readiness-review.md
-
-security-architecture.md
-```
-
----
-
-### Code Review
-
-Load:
-
-```text
-Universal Enterprise Multi-Agent Code Review & Production Readiness Skill.md
-```
-
----
-
-### AI Products
-
-Load:
-
-```text
-ai-engineering-and-llm-systems.md
-
-security-architecture.md
-
-testing-and-quality-engineering.md
-```
-
----
-
-# Skill Execution Framework
-
-Every task follows:
-
-```text
-User Request
-      ↓
-master-skill.md
-      ↓
-engineering-principles.md
-      ↓
-Required Skills
-      ↓
-Cross Skill Validation
-      ↓
-Agent Review
-      ↓
-Review Board
-      ↓
-Final Output
-```
-
-No skill should execute independently.
-
----
-
-# Multi-Agent Review Process
-
-Most skills utilize a multi-agent review process.
-
-Example:
-
-```text
-Architecture Agent
-      ↓
-Security Agent
-      ↓
-Reliability Agent
-      ↓
-Performance Agent
-      ↓
-QA Agent
-```
-
-Each agent evaluates the task from a different perspective.
-
----
-
-# Final Review Board
-
-Critical decisions should pass through a final review board.
-
-Example Board:
-
-* Principal Architect
-* Security Engineer
-* Reliability Engineer
-* Engineering Manager
-
-Approval Requirements:
-
-```text
-Minimum 3 of 4 approvals
-```
+Individual skills (like `backend-achitecture-skill`, `security-architecture`, etc.) are natively available to the agents. When you ask an agent to perform a task, it will automatically search the `skills/` directory and apply the relevant methodologies.
 
 ---
 
 # Repository Structure
 
 ```text
-README.md
-
-master-skill.md
-
-skill-execution-framework.md
-
-engineering-principles.md
-
-backend-achitecture skill.md
-
-Frontend arch skill.md
-
-api-design-and-integrations.md
-
-database-design-and-data-architecture.md
-
-security-architecture.md
-
-testing-and-quality-engineering.md
-
-system-design-and-architecture-review.md
-
-Deployment-skill.md
-
-Universal Enterprise Multi-Agent Code Review & Production Readiness Skill.md
-
-production-readiness-review.md
-
-ai-engineering-and-llm-systems.md
+plugin.json                 # Plugin configuration
+README.md                   # This documentation
+agents/
+  master-architect.json     # Orchestrator subagent definition
+skills/
+  master-skill/
+    SKILL.md
+  engineering-principles/
+    SKILL.md
+  backend-achitecture-skill/
+    SKILL.md
+  ...
 ```
 
 ---

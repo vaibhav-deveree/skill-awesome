@@ -1,3 +1,8 @@
+---
+name: frontend-arch-skill
+description: Frontend arch skill
+---
+
 # Universal Frontend Architecture & UI/UX Engineering Standards Skill
 
 ## Purpose

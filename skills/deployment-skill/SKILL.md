@@ -1,3 +1,8 @@
+---
+name: deployment-skill
+description: Deployment skill
+---
+
 # Universal Deployment & Production Operations Skill
 
 ## Purpose

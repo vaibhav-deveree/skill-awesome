@@ -1,3 +1,8 @@
+---
+name: backend-achitecture-skill
+description: backend achitecture skill
+---
+
 # Universal Backend Architecture & Engineering Standards Skill
 
 ## Purpose

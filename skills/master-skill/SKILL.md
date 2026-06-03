@@ -1,3 +1,8 @@
+---
+name: master-skill
+description: master skill
+---
+
 # Master Skill Orchestrator
 
 ## Purpose
