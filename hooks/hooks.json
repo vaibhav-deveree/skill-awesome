@@ -6,6 +6,10 @@
           {
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}\"/.claude-plugin/hooks/inject_context.js"
+          },
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}\"/.claude-plugin/hooks/auto_update.js"
           }
         ]
       }
