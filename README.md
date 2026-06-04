@@ -146,6 +146,12 @@ Use the native slash command to instantly switch personas:
 /master-architect Review my project and generate a new feature implementation plan.
 ```
 
+**To enforce the Strict Iterative Development Workflow (Task-by-Task):**
+If you want to ensure zero bugs accumulate during a large feature, combine the master orchestrator with the strict iteration rule:
+```bash
+/master-architect We need to build the checkout flow. Enforce the Strict Iterative Development Workflow: write code for one task at a time, and run a mandatory God Review after each task before moving forward.
+```
+
 **To do aesthetics-first frontend development:**
 ```bash
 /vibe-coder Build a modern dashboard for this project with glassmorphism.
@@ -176,6 +182,9 @@ To get the most out of the framework and its specialized agents, you can simply 
 
 ### For New Feature Development
 > "I want to build a new feature. Use the `@master-architect` agent to analyze the current system, write an implementation plan to `.memory/plans/`, and orchestrate the backend and frontend development using the required subagents."
+
+### For Strict Iterative Development (Bug-Free Execution)
+> "Use the `@master-architect` and enforce the Strict Iterative Development Workflow. You must implement exactly ONE task at a time. After writing the code for a task, pause and invoke a God Review on that specific task. Ensure all frontend edge cases (routing, state) and backend edge cases (timeouts, load) pass before you move on to the next task."
 
 ### For Frontend & UI Tasks
 > "Use the `@vibe-coder` agent to build a new clean SaaS UI for the dashboard. Generate the interactive Phase Zero `mockup.html` first so I can select the exact vibe before we write any framework code."
