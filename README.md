@@ -99,9 +99,18 @@ Configure your `.env` or settings file with your LangSmith keys, and every actio
 
 ## 🗣️ Commands & Skill Triggers
 
-`skill-awesome` provides two ways to interact with the framework: **Native Slash Commands** (to invoke specific subagents) and **Natural Language Triggers** (to activate specific skills).
+`skill-awesome` provides two ways to interact with the framework: **Native Slash Commands** (for Claude Code CLI) and **Natural Language Triggers** (for Gemini / Antigravity).
 
-### Native Slash Commands
+### How to Invoke Agents
+
+#### 🤖 In Gemini / Antigravity (Natural Language)
+Because Gemini and Antigravity are natural language conversational agents, you do NOT need to use slash commands. You can invoke any subagent by simply asking the agent in plain English.
+* *"Use the `@master-architect` to plan this feature."*
+* *"Trigger the `@qa-tester` to validate my API."*
+* *"Run the `@code-reviewer` agent on my PR."*
+The agent will automatically read the corresponding skill and use its native `invoke_subagent` tool to execute the workflow.
+
+#### 💻 In Claude Code (Slash Commands)
 If you are using Claude Code or a compatible CLI, you can instantly switch the active agent profile using these commands:
 
 | Command | What it does | When to use it |
