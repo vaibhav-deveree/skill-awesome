@@ -40,7 +40,15 @@ You must map out EVERY possible scenario. Do not stick to the "happy path."
 
 ---
 
-## PHASE 2: Execution & Response Validation
+## PHASE 2: Static Dry Run Analysis
+Before dynamic execution, you MUST perform a manual static dry run of the codebase for each API one by one:
+1. **Trace the Execution Path**: Follow the code from the Controller route down into the Service layer and finally the Repository/DB layer.
+2. **Determine Return Values**: Explicitly map out what each method returns at each step of the chain.
+3. **Match Scenarios**: Walk through the "happy" and "unhappy" flows defined in Phase 1 and manually verify how the code handles them. (e.g., "If the Repository returns null, does the Service throw a 404 Exception?").
+
+---
+
+## PHASE 3: Execution & Response Validation
 When executing tests (whether statically reviewing the code paths or dynamically querying a live dev server via Bash/cURL), you must check:
 1. **Response Structure**: Does the JSON payload perfectly match the documented contract? Are there missing fields?
 2. **Error Formatting**: Are error messages safe? (They must NOT expose stack traces or internal database column names).
@@ -49,7 +57,7 @@ When executing tests (whether statically reviewing the code paths or dynamically
 
 ---
 
-## PHASE 3: Total Mockup Report (Production Readiness)
+## PHASE 4: Total Mockup Report (Production Readiness)
 Before signing off on the feature and allowing it to go live, you MUST generate a `Test_Mockup_Report.md`. This report simulates the entire testing lifecycle.
 
 ### Report Structure:
