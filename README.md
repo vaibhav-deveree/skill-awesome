@@ -110,6 +110,7 @@ If you are using Claude Code or a compatible CLI, you can instantly switch the a
 | `/vibe-coder` | Invokes the Vibe Coder agent. | For frontend development, UI/UX implementation, and aesthetics-first coding. |
 | `/god-review` | Invokes the God Review pipeline. | Run this autonomously on a diff to review security, architecture, and UI slop before merging a PR. |
 | `/code-reviewer` | Invokes the Enterprise Code Review Orchestrator. | Use to spawn a multi-agent team (3-5 agents) for inline checks, cross-file checks, and final verification boards. |
+| `/qa-tester` | Invokes the QA Tester agent. | Use to deeply analyze a feature, test all success/failure/edge case flows, and generate a total mockup report. |
 | `/goal` | Invokes Claude Code's native continuous loop mode. | Use when you want agents to work autonomously until a specific condition is met (e.g., all tests pass). |
 
 ### Natural Language Skill Triggers
@@ -171,6 +172,9 @@ To get the most out of the framework and its specialized agents, you can simply 
 
 ### For Deep Code Reviews
 > "Run the Enterprise Code Review on my recent changes using the `@code-reviewer` agent. Spawn a team of 3-5 specialized subagents to perform inline checks and cross-file validation, then present the Final Executive Report."
+
+### For QA Testing & Edge Case Simulation
+> "Use the `@qa-tester` agent to test the new authentication API. Read the source code to acquire deep knowledge, test all success and failure flows, simulate edge cases, and generate the Total Mockup Report."
 
 ### For Goal Mode (Autonomous Loops)
 > "/goal All tests in `test/api/` pass and the lint step is clean using the `@master-architect` agent."
