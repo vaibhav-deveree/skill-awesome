@@ -183,7 +183,7 @@ To get the most out of the framework and its specialized agents, you can simply 
 > "Run the Enterprise Code Review on my recent changes using the `@code-reviewer` agent. Spawn a team of 3-5 specialized subagents to perform inline checks and cross-file validation, then present the Final Executive Report."
 
 ### For QA Testing & Edge Case Simulation
-> "Use the `@qa-tester` agent to test the new authentication API. Read the source code to acquire deep knowledge, test all success and failure flows, simulate edge cases, and generate the Total Mockup Report."
+> "Use the `@qa-tester` agent to test the new authentication API. Read the source code to acquire deep knowledge, and perform a static dry run tracing the execution path from Controller to Repository for each API. Match the exact return values against the happy/unhappy scenarios, simulate edge cases, and generate the Total Mockup Report."
 
 ### For Goal Mode (Autonomous Loops)
 > "/goal All tests in `test/api/` pass and the lint step is clean using the `@master-architect` agent."
