@@ -109,6 +109,7 @@ If you are using Claude Code or a compatible CLI, you can instantly switch the a
 | `/master-architect` | Invokes the Master Architect agent. | For backend, system design, architectural planning, and complex multi-agent orchestration. |
 | `/vibe-coder` | Invokes the Vibe Coder agent. | For frontend development, UI/UX implementation, and aesthetics-first coding. |
 | `/god-review` | Invokes the God Review pipeline. | Run this autonomously on a diff to review security, architecture, and UI slop before merging a PR. |
+| `/goal` | Invokes Claude Code's native continuous loop mode. | Use when you want agents to work autonomously until a specific condition is met (e.g., all tests pass). |
 
 ### Natural Language Skill Triggers
 Agents are equipped with dozens of passive "Skills" that sit in the background. To activate them, simply include their trigger words in your prompt:
@@ -141,6 +142,12 @@ Use the native slash command to instantly switch personas:
 **To trigger an autonomous God Review on a PR:**
 ```bash
 /god-review
+```
+
+**To run an autonomous loop until a condition is met (Goal Mode):**
+Combine the native `/goal` command with a subagent to let the agent work completely autonomously until verifiable success is achieved:
+```bash
+/goal The test suite in test/api passes using the @master-architect agent
 ```
 
 **To interact with the Memory Harness manually:**
