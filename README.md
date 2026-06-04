@@ -131,6 +131,7 @@ Agents are equipped with dozens of passive "Skills" that sit in the background. 
 | **Transitions.dev** | *"add a transition"*, *"make the modal open smoothly"*, *"stagger animation"* | Injects production-ready, zero-dependency CSS micro-animations into your frontend. |
 | **Clean SaaS UI** | *"build a clean UI"*, *"SaaS look"*, *"professional design"* | Enforces the `frontend-design-skill` rules to build structured, high-utility, glassmorphism-free interfaces. |
 | **Creative UI** | *"bold design"*, *"maximalist chaos"*, *"out of the box"* | Bypasses the SaaS rules and activates the `frontend-creative-design` skill for highly unique, experimental UI. |
+| **Scoped Review** | *"check for bugs"*, *"verify the fix"*, `/scoped-review` | Enforces a strict, file-by-file code review limited ONLY to the files or diff you specify. Prevents scope creep and stops the agent from scanning unrelated files. |
 | **Memory Harness** | (Automatic) | Agents automatically run SQLite commands (`log_state`, `log_history`) in the background to track project memory. |
 
 ---
@@ -143,6 +144,12 @@ Once installed, the framework runs natively in your agent workspace.
 Use the native slash command to instantly switch personas:
 ```bash
 /master-architect Review my project and generate a new feature implementation plan.
+```
+
+**To enforce the Strict Iterative Development Workflow (Task-by-Task):**
+If you want to ensure zero bugs accumulate during a large feature, combine the master orchestrator with the strict iteration rule:
+```bash
+/master-architect We need to build the checkout flow. Enforce the Strict Iterative Development Workflow: write code for one task at a time, and run a mandatory God Review after each task before moving forward.
 ```
 
 **To do aesthetics-first frontend development:**
@@ -176,11 +183,19 @@ To get the most out of the framework and its specialized agents, you can simply 
 ### For New Feature Development
 > "I want to build a new feature. Use the `@master-architect` agent to analyze the current system, write an implementation plan to `.memory/plans/`, and orchestrate the backend and frontend development using the required subagents."
 
+### For Strict Iterative Development (Bug-Free Execution)
+> "Use the `@master-architect` and enforce the Strict Iterative Development Workflow. You must implement exactly ONE task at a time. After writing the code for a task, pause and invoke a God Review on that specific task. Ensure all frontend edge cases (routing, state) and backend edge cases (timeouts, load) pass before you move on to the next task."
+
 ### For Frontend & UI Tasks
 > "Use the `@vibe-coder` agent to build a new clean SaaS UI for the dashboard. Generate the interactive Phase Zero `mockup.html` first so I can select the exact vibe before we write any framework code."
 
 ### For Deep Code Reviews
 > "Run the Enterprise Code Review on my recent changes using the `@code-reviewer` agent. Spawn a team of 3-5 specialized subagents to perform inline checks and cross-file validation, then present the Final Executive Report."
+
+### For Scoped, File-by-File Reviews
+> "Run a `/scoped-review` on `auth_service.py` and `user_controller.py`. Check for bugs and security issues in these files only."
+>
+> "Verify the fix in my recent changes. Do a scoped review of the diff to ensure there are no unhandled exceptions."
 
 ### For QA Testing & Edge Case Simulation
 > "Use the `@qa-tester` agent to test the new authentication API. Read the source code to acquire deep knowledge, and perform a static dry run tracing the execution path from Controller to Repository for each API. Match the exact return values against the happy/unhappy scenarios, simulate edge cases, and generate the Total Mockup Report."
