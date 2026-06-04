@@ -159,6 +159,24 @@ python .memory/db_engine.py query "SELECT * FROM state"
 
 ---
 
+## 💡 Copy & Paste Sample Prompts
+
+To get the most out of the framework and its specialized agents, you can simply copy and paste these prompts directly into your AI assistant:
+
+### For New Feature Development
+> "I want to build a new feature. Use the `@master-architect` agent to analyze the current system, write an implementation plan to `.memory/plans/`, and orchestrate the backend and frontend development using the required subagents."
+
+### For Frontend & UI Tasks
+> "Use the `@vibe-coder` agent to build a new clean SaaS UI for the dashboard. Generate the interactive Phase Zero `mockup.html` first so I can select the exact vibe before we write any framework code."
+
+### For Deep Code Reviews
+> "Run the Enterprise Code Review on my recent changes using the `@code-reviewer` agent. Spawn a team of 3-5 specialized subagents to perform inline checks and cross-file validation, then present the Final Executive Report."
+
+### For Goal Mode (Autonomous Loops)
+> "/goal All tests in `test/api/` pass and the lint step is clean using the `@master-architect` agent."
+
+---
+
 ## 🤝 How to Contribute
 
 Contributions are highly encouraged! We want to build the most comprehensive library of AI engineering protocols.
