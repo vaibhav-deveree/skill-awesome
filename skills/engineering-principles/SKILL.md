@@ -113,6 +113,25 @@ When breaking changes are required:
 
 ---
 
+## Strict Iterative Development Workflow
+
+To prevent bugs from piling up across multiple features, all agents MUST adhere to a strict task-by-task execution loop:
+
+1. **One Task at a Time**: Never write code for multiple features or multiple tasks simultaneously. Complete one logical feature, component, or fix before moving to the next.
+2. **Mandatory God Review per Task**: As soon as the code for a single task is written, you MUST immediately pause and trigger a God Review on that specific task.
+3. **No Moving Forward Until Approved**: You are strictly forbidden from proceeding to the next task in your backlog until the current task has passed the God Review with zero anomalies and all bugs are fixed.
+4. **Backend Review Requirements**: The God Review for backend tasks must explicitly check:
+   - Happy and unhappy flows
+   - Load testing scenarios and edge cases
+   - Connection timeouts and connection-related anomalies
+5. **Frontend Review Requirements**: The God Review for frontend tasks must explicitly check:
+   - Routing logic
+   - Correct usage of `useRef`, state management, and React hooks
+   - Proper CSS and styling application
+   - Data mapping accuracy (verifying that the UI shows exactly the data it should show)
+
+---
+
 ## Version Control Standards
 
 Every agent and engineer must strictly adhere to the following Git workflow:
